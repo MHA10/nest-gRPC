@@ -3,6 +3,6 @@ import { HeroesController } from './controller/heroes.controller';
 
 @Module({
   imports: [],
-  providers: [HeroesController],
+  controllers: [HeroesController],
 })
 export class HeroesModule {}

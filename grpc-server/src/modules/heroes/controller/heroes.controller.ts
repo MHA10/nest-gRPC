@@ -11,6 +11,9 @@ export class HeroesController {
     metadata: Metadata,
     call: ServerUnaryCall<any, any>,
   ): Hero {
+    if (!data || data.id === undefined) {
+      throw new Error('Invalid input data'); // Error handling
+    }
     const items = [
       { id: 1, name: 'John' },
       { id: 2, name: 'Doe' },
