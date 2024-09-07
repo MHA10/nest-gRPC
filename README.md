@@ -1,2 +1,2 @@
 # nest-gRPC
-Server tot Server gRPC communication
+Server to Server gRPC communication
