@@ -1,0 +1,55 @@
+// hero/hero.proto
+syntax = "proto3";
+
+package hero;
+
+service HeroesService {
+  // List all heroes (for Search or Listing)
+  rpc ListHeroes (ListHeroesRequest) returns (ListHeroesResponse) {}
+
+  // Find one hero by ID
+  rpc FindOne (HeroById) returns (Hero) {}
+
+  // Create a new hero
+  rpc CreateHero (CreateHeroRequest) returns (Hero) {}
+
+  // Update a hero
+  rpc UpdateHero (UpdateHeroRequest) returns (Hero) {}
+
+  // Delete a hero by ID
+  rpc DeleteHero (HeroById) returns (DeleteHeroResponse) {}
+}
+
+// Messages for Search/List
+message ListHeroesRequest {}
+
+message ListHeroesResponse {
+  repeated Hero heroes = 1;
+}
+
+// Messages for Read
+message HeroById {
+  int32 id = 1;
+}
+
+// Messages for Create
+message CreateHeroRequest {
+  string name = 1;
+}
+
+// Messages for Update
+message UpdateHeroRequest {
+  int32 id = 1;
+  string name = 2;
+}
+
+// Messages for Delete
+message DeleteHeroResponse {
+  bool success = 1;
+}
+
+// Hero definition
+message Hero {
+  int32 id = 1;
+  string name = 2;
+}
