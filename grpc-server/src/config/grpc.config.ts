@@ -7,7 +7,7 @@ export const grpcConfig: MicroserviceOptions = {
   options: {
     package: 'hero',
     protoPath: join(__dirname, '../../src/modules/grpc/protos/hero.proto'),
-    url: 'localhost:5000',
+    url: `${process.env.GRPC_SERVER_HOST ?? 'localhost'}:${process.env.GRPC_SERVER_PORT ?? '5000'}`,
     onLoadPackageDefinition: (pkg, server) => {
       new ReflectionService(pkg).addToServer(server);
     },
