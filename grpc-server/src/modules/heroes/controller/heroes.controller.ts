@@ -8,7 +8,7 @@ import {
   UpdateHeroRequestDto,
   ListHeroesResponseDto,
   DeleteHeroResponseDto,
-} from '../dto';
+} from '../dto/heroes.dto';
 import { DtoClass } from '../../../common/decorators/dto-class.decorator';
 import { ErrorHandler } from '../../../utils/error-handler.utils';
 
